@@ -1,0 +1,12 @@
+---
+const {url, title, entry} = Astro.props;
+import '../styles/global.css'
+---
+
+<a href={url}>{(entry + 1)}. {title}</a>
+
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>

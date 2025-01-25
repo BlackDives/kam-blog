@@ -1,0 +1,29 @@
+---
+import { Image, Picture } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro'
+import LocalHeaderImage from '../assets/header-images/post-1-header.webp'
+const {frontmatter} = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    <p>{frontmatter.author}</p>
+    <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+    <div class="image-container" />
+    <slot />
+</BaseLayout>
+
+<style>
+    .image-container {
+        height: 300px;
+        background-image: url("../assets/header-images/post-1-header.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+</style>
