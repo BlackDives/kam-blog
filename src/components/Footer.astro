@@ -1,12 +1,56 @@
 ---
-import Social from "./Social.astro"
+import Social from "./Social.astro";
 const platform = "github";
 const username = "blackdives";
-const linkedIn = "linkedin"
-const linkedInUser = "sir-w"
+const linkedIn = "linkedin";
+const linkedInUser = "sir-w";
+const year = new Date();
 ---
 
 <footer>
-  <Social platform="github" username="/blackdives" />
-  <Social platform="linkedin" username="/in/sir-w" />
+  <div class="footer-container">
+    <div class="subheader-section">
+      <p class="footer-subheader">Socials</p>
+      <Social platform="github" username="/blackdives" />
+      <Social platform="linkedin" username="/in/sir-w" />
+    </div>
+    <div class="subheader-section">
+      <p class="footer-subheader">Navigation</p>
+      <a href="/">home</a>
+      <a href="/blog">blog</a>
+      <a href="/about">about</a>
+    </div>
+  </div>
+  <div class="copyright">
+     <p>&copy; {year.getFullYear()} Sirkamron Wilson.</p>
+   </div>
 </footer>
+
+<style>
+  a {
+    padding: 0.5rem 0;
+    text-decoration: none;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5em;
+  }
+
+  .footer-subheader {
+    font-weight: bold;
+  }
+
+  .subheader-section {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+  }
+
+  .copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+</style>

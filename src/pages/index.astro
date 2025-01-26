@@ -1,9 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting'
-const pageTitle = "Kam's Blog";
+const pageTitle = "Greetings, Friend!";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<!-- <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey There"]} /> -->
+	<div>
+		<p class="paragraph">Welcome to my blog site! My name is Kam and on this site I will be writing about various topics regarding tech. 
+			From hobby projects that I am building, to tech trends and even computer science concepts. 
+			Whatever is interesting, I will be talking about it</p>
+
+			 <p class="paragraph">This blog is meant to be a space for me sharing my learnings, creativity, and different projects. 
+				Whether you’re a fellow tech enthusiast, a curious beginner, or just passing through, I hope you’ll find something here that inspires you or piques your curiosity. 
+				Technology is constantly evolving, and there’s always something new to discover or discuss.</p>
+    
+    <p class="paragraph">Feel free to dive in and explore the <a href="/blog">posts</a>—there’s a little something for everyone. And don’t hesitate to reach out on different social medias to share your thoughts; 
+		I’d love to hear what you think or learn from your perspectives too. I am a sponge so I am always open to learning things from others!</p>
+	</div>
 </BaseLayout>
+
+<style>
+	.paragraph {
+		line-height: 1.8;
+	}
+</style>

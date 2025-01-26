@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "My First Blog Post"
-pubDate: 2025-01-23
+pubDate: "Jan 23, 2025"
 description: "First blog entry"
 author: "Sirkamron Wilson"
 image:
-  url: "/assets/header-images/post-1-header.webp"
+  url: "/images/header-image-2.jpg"
   alt: "The Astro logo on a dark background with a pink glow."
 tags: ["astro", "blogging", "learning in public"]
 ---

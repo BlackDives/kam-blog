@@ -7,14 +7,61 @@ const pageTitle = "My Blogs"
 
 <BaseLayout pageTitle={pageTitle}>
 	<div>
-         <ul>
-             {allPosts.map((post: any, index: number) => <li><BlogPost url={post.url} title={post.frontmatter.title} entry={index} /></li>)}
-          </ul>
+             {allPosts.map((post: any, index: number) => 
+             {
+               return (index == 0 ? 
+               <a href={post.url}>
+                    <div class="featured-blog">
+                    <div class="hero-image">
+                         <img src={post.frontmatter.image.url} height={510} />
+                    </div>
+                    <div class="meta-data">
+                         <h2>{post.frontmatter.title}</h2>
+                         <p>{post.frontmatter.pubDate}</p>
+                    </div>
+               </div> 
+               </a>
+               : 
+               <ul class="blog-posts">
+                    <li><BlogPost url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} thumbnail={post.frontmatter.image.url} entry={index} /></li>
+               </ul>)
+             })}
      </div>
 </BaseLayout>
 
 <style>
      ul {
           list-style-type: none;
+     }
+
+     a {
+          text-decoration: none;
+     }
+
+     .featured-blog {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+
+     .meta-data {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+
+     .hero-image {
+          width: 100%;
+     }
+
+     .hero-image img {
+          object-fit: cover;
+          width: 100%;
+          border-radius: 10px;
+     }
+
+     .blog-posts {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
      }
 </style>

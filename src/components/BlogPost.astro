@@ -1,12 +1,27 @@
 ---
-const {url, title, entry} = Astro.props;
+const {url, title, thumbnail, date, entry} = Astro.props;
 import '../styles/global.css'
 ---
 
-<a href={url}>{(entry + 1)}. {title}</a>
+<a href={url}>
+    <div class="thumbnail">
+        <img src={thumbnail} height={200} />
+    </div>
+    <h3>{title}</h3>
+    <p>{date}</p>
+</a>
 
 <style>
     a {
         text-decoration: none;
+    }
+
+    .thumbnail {
+        width: 100%;
+    }
+
+    .thumbnail img {
+        border-radius: 10px;
+        width: 100%;
     }
 </style>
